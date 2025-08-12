@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* 父级元素为flex容器 */
+            display: flex;
+            width: 80%;
+            height: 500px;
+            background-color: pink;
+        }
+
+        div span {
+            width: 200px;
+            height: 200px;
+            margin-right: 10px;
+            background-color: purple;
+        }
+        div span:nth-child(3) {
+            /* align-self属性设置单个子项侧轴排列方式 */
+            align-self: flex-end;
+        }
+        div span:nth-child(2) {
+            /* order属性设置子项顺序,默认值为0,越小越靠前 */
+            order: -2;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+
+</html>

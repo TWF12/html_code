@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+        }
+        .xiongda {
+            background-color: red;
+            /* 数值越大盒子越靠上,数值相同则后来者居上,且只有定位的盒子才有这个属性 */
+            z-index: 1;
+        }
+        .xionger {
+            top: 50px;
+            left: 50px;
+            background-color: green;
+        }
+        .qiangge {
+            top: 100px;
+            left: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box xiongda">熊大</div>
+    <div class="box xionger">熊二</div>
+    <div class="box qiangge">光头强</div>
+</body>
+</html>

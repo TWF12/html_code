@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            width: 80%;
+            height: 600px;
+            background-color: pink;
+            /* 默认为从头部对齐,如果是x(y)轴为主轴,那么就是左(上)对齐 */
+            justify-content: start;
+            /* 从尾部对齐,如果是x(y)轴为主轴,那么就是右(下)对齐 */
+            justify-content: end;
+            /* 居中对齐 */
+            justify-content: center;
+            /* 平均分配剩余空间,不贴容器壁 */
+            justify-content: space-around;
+            /* 平均分配剩余空间,贴容器壁 */
+            justify-content: space-between;
+        }
+
+        div span {
+            width: 300px;
+            height: 200px;
+            margin-right: 10px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三清山·天下第一仙峰</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: '微软雅黑', sans-serif;
+        }
+
+        /* 导航栏 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 5%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: background 0.3s;
+        }
+
+        .navbar.scrolled {
+            background: rgba(23, 65, 43, 0.9);
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 2rem;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .navbar.scrolled .nav-links a {
+            color: #fff;
+        }
+
+        .nav-links a:hover {
+            color: #17412b;
+        }
+
+        /* 主视觉区 */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                url('三清山.png') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* 景点介绍 */
+        .section {
+            padding: 5rem 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #17412b;
+            margin-bottom: 3rem;
+        }
+
+        .attractions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .attraction-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .attraction-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .attraction-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .attraction-content {
+            padding: 1.5rem;
+        }
+
+        .attraction-content h3 {
+            color: #17412b;
+            margin-bottom: 0.8rem;
+        }
+
+        /* 旅行贴士 */
+        .tips {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tip-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .tip-item h4 {
+            color: #17412b;
+            margin-bottom: 1rem;
+        }
+
+        /* 页脚 */
+        footer {
+            background: #17412b;
+            color: white;
+            text-align: center;
+            padding: 2rem 5%;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links li {
+                margin: 0 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#home">首页</a></li>
+            <li><a href="#attractions">核心景点</a></li>
+            <li><a href="#tips">旅行贴士</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>三清山·天下第一仙峰</h1>
+            <p>世界自然遗产 | 国家5A级景区 | 道教文化圣地</p>
+        </div>
+    </section>
+
+    <section class="section" id="attractions">
+        <h2 class="section-title">核心景点导览</h2>
+        <div class="attractions">
+            <div class="attraction-card">
+                <div class="attraction-img" style="background-image: url('巨蟒出山.png')">
+                </div>
+                <div class="attraction-content">
+                    <h3>巨蟒出山</h3>
+                    <p>高128米的巨型花岗岩石柱，形似巨蟒破山而出，是三清山标志性景观，地质奇观与自然想象的完美结合。</p>
+                </div>
+            </div>
+            <div class="attraction-card">
+                <div class="attraction-img" style="background-image: url('东方女神.png')">
+                </div>
+                <div class="attraction-content">
+                    <h3>东方女神</h3>
+                    <p>高86米的天然石柱，形态宛若静坐沉思的少女，是三清山"神女峰"的象征，承载着道教文化中的美好寓意。</p>
+                </div>
+            </div>
+            <div class="attraction-card">
+                <div class="attraction-img" style="background-image: url('玉京峰.png')">
+                </div>
+                <div class="attraction-content">
+                    <h3>玉京峰</h3>
+                    <p>三清山最高峰（海拔1819.9米），登顶可俯瞰群峰云海，日出日落时分霞光漫天，是摄影爱好者的天堂。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="tips">
+        <h2 class="section-title">旅行实用贴士</h2>
+        <div class="tips">
+            <div class="tip-item">
+                <h4>最佳游览时间</h4>
+                <p>春秋季（4-5月、9-11月）气候宜人，植被茂盛；冬季（12-2月）可赏雾凇雪景，但需注意防滑。</p>
+            </div>
+            <div class="tip-item">
+                <h4>门票与交通</h4>
+                <p>门票120元/人（旺季），索道往返125元；上饶高铁站有直达景区的旅游专线车，车程约1.5小时。</p>
+            </div>
+            <div class="tip-item">
+                <h4>登山建议</h4>
+                <p>推荐选择南清园-西海岸-阳光海岸的环形路线，全程约5-6小时，沿途覆盖主要景点。请穿防滑运动鞋，携带雨具。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 三清山旅游发展有限公司 | 咨询电话：181-7435-4734</p>
+        <p>地址：江西省上饶市玉山县三清乡 | 友情链接：<a
+                href="https://s.weibo.com/aisearch?q=%E4%B8%89%E6%B8%85%E5%B1%B1&Refer=weibo_aisearch" target="_blank"
+                style="color: #fff;">官方微博</a> | <a href="https://mp.weixin.qq.com/s/LEmz1bbQLWTFkQEmoLxtpw"
+                target="_blank" style="color: #fff;">官方微信</a>
+        </p>
+    </footer>
+
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

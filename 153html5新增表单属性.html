@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 伪元素选择器 */
+        input::placeholder {
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <!-- required要求必须填写 -->
+        <!-- placeholder属性实现表单中默认显示一些文字(与value不同的是不需要手动删除) -->
+        <!-- autofocus实现自动聚焦 -->
+        <!-- autocomplete:on实现自动显示之前提交保存成功的信息 autocomplete:off则是不显示-->
+        <!-- multiple实现多选文件 -->
+        <input type="search" name="sear" id="" required="required" placeholder="pink老师" autofocus="autofocus" autocomplete="off">
+        <input type="file" name="" id="" multiple="multiple">
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>

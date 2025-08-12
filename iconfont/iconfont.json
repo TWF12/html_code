@@ -1,0 +1,72 @@
+{
+  "id": "4970106",
+  "name": "no name",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "18267910",
+      "name": "查验",
+      "font_class": "chayan",
+      "unicode": "e98c",
+      "unicode_decimal": 59788
+    },
+    {
+      "icon_id": "18267943",
+      "name": "美元",
+      "font_class": "meiyuan",
+      "unicode": "e994",
+      "unicode_decimal": 59796
+    },
+    {
+      "icon_id": "18267966",
+      "name": "音乐",
+      "font_class": "yinle",
+      "unicode": "e99a",
+      "unicode_decimal": 59802
+    },
+    {
+      "icon_id": "18267967",
+      "name": "身份识别认证",
+      "font_class": "shenfenshibierenzheng",
+      "unicode": "e99b",
+      "unicode_decimal": 59803
+    },
+    {
+      "icon_id": "34452999",
+      "name": "good-fill",
+      "font_class": "good-fill",
+      "unicode": "e83b",
+      "unicode_decimal": 59451
+    },
+    {
+      "icon_id": "41639912",
+      "name": "Pause (暂停)",
+      "font_class": "a-Pausezanting",
+      "unicode": "e7fa",
+      "unicode_decimal": 59386
+    },
+    {
+      "icon_id": "41639917",
+      "name": "Fire (火热)",
+      "font_class": "a-Firehuore",
+      "unicode": "e7fb",
+      "unicode_decimal": 59387
+    },
+    {
+      "icon_id": "41639923",
+      "name": "Avatar (头像)",
+      "font_class": "a-Avatartouxiang",
+      "unicode": "e7fc",
+      "unicode_decimal": 59388
+    },
+    {
+      "icon_id": "41639925",
+      "name": "Telegram (Telegram)",
+      "font_class": "a-TelegramTelegram",
+      "unicode": "e7fd",
+      "unicode_decimal": 59389
+    }
+  ]
+}

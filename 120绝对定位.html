@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .son {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .father {
+            width: 500px;
+            height: 500px;
+            background-color: skyblue;
+        }
+
+        .grandfather {
+            position: relative;
+            width: 800px;
+            height: 800px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 如果没有祖先元素或祖先元素没有定位,则以浏览器为准定位 -->
+    <!-- 如果祖先元素有定位,则以最近带有定位的祖先元素为准定位 -->
+    <!-- 绝对定位脱离标准流,不占有原来的位置 -->
+    <div class="grandfather">
+        <div class="father">
+            <div class="son">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

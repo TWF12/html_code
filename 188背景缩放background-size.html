@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 500px;
+            height: 500px;
+            border: 2px solid #ccc;
+            background: url(imags/dog.jpg) no-repeat;
+            /* background-size两个参数可以是px表示宽和高 */
+            background-size: 500px 300px;
+            /* 只写一个参数表示宽,高则等比缩放 */
+            background-size: 500px;
+            /* 两个参数可以是百分比,表示该盒子宽或高的百分之多少 */
+            background-size: 50%;
+            /* cover等比拉伸至完全覆盖盒子,有可能导致背景图片显示不完全 */
+            background-size: cover;
+            /* contain等比拉伸至宽或高铺满盒子,有可能盒子有空白 */
+            background-size: contain;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

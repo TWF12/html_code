@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: pink;
+        }
+        div:hover {
+            /* scale里面的参数数字不跟单位,意思是缩放倍数 */
+            transform: scale(2,1);
+            /* 只写一个参数是等比缩放,宽和高缩放相等比例 */
+            transform: scale(2);
+            /* 参数小于1是代表缩小 */
+            transform: scale(0.5);
+            /* scale的优点是不会影响其他盒子的布局 ,并且可以设置缩放点 */
+            /* width: 300px;
+            height: 300px; */
+            transform-origin: right top;
+            transform: scale(3);
+        }
+    </style
+</head>
+<body>
+    <div></div>
+    123
+</body>
+</html>

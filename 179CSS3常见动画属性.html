@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes move {
+            0% {
+               transform: translate(0,0);
+            }
+            100% {
+                transform: translate(1000px,0);
+            }
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /* 动画名称 */
+            animation-name: move;
+            /* 持续时间 */
+            animation-duration: 3s;
+            /* 运动曲线 */
+            animation-timing-function: ease;
+            /* 延迟时间 */
+            animation-delay: 1s;
+            /* 循环次数 infinite意思是无限,如果设置了逆向播放,那么逆向播放也算一次 */
+            animation-iteration-count: 3;
+            /* 逆向播放 默认为normal为不逆向 alternate为逆向*/
+            animation-direction: alternate;
+            /* 动画结束状态 默认为backwards回到初始状态 forward为保持结束状态 */
+            animation-fill-mode: forwards;
+
+            /* 复合写法 */
+            /* linear是匀速的意思 */
+            /* animation-play-state属性必须单独写 */
+            animation: move 3s linear 1s 3 alternate forwards;
+            
+        }
+        div:hover {
+            /* 动画暂停或播放 必须单独写  默认为running 暂停为paused*/
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

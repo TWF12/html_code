@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            width: 80%;
+            height: 600px;
+            background-color: pink;
+            /* 子元素(项目)是沿着主轴方向排列的,当设置某个轴为主轴时,另一个轴就为侧轴 */
+            /* 主轴方向默认为x轴 */
+            flex-direction: row;
+            /* x轴反向排列*/
+            flex-direction: row-reverse;
+            /* 设置主轴方向为y轴正方向 */
+            flex-direction: column;
+            /* y轴反向排列*/
+            flex-direction: column-reverse;
+        }
+
+        div span {
+            width: 300px;
+            height: 200px;
+            margin-right: 10px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+
+</html>

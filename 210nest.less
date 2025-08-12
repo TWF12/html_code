@@ -1,0 +1,21 @@
+.header {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    a {
+        color: red;
+        // 不加&符号就是后代选择器,加了就是连在一起的(如果是伪类选择器,结构伪类选择器,伪元素选择器,交集选择器必须加&符号)
+        &:hover {
+            color: blue;
+        }
+    }
+}
+
+.nav {
+    .logo {
+        color: green;
+    }
+    &::before {
+        content: '123';
+    }
+}

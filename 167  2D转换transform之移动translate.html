@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 移动盒子的位置: 定位    外边距    2d转换移动 */
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* translate中第一个参数为x轴移动距离,第二个参数为y轴移动距离 */
+            /* transform: translate(100px,100px); */
+            /* 只在x轴方向上移动 */
+            /* transform: translate(100px,0); */
+            /* transform: translateX(100px); */
+            /* 只在y轴方向上移动 */
+            /* transform: translate(0,100px); */
+            /* transform: translateY(100px); */
+        }
+        /* 2d转换移动translate最大的优点:不会影响其他元素的位置 */
+        div:first-child {
+            transform: translate(30px,30px);
+        }
+        div:last-child {
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 移动端初始样式 -->
+    <link rel="stylesheet" href="normalize.css">
+    <style>
+        div {
+            /* 传统盒子模型=with+padding+border */
+            box-sizing: content-box;
+            width: 100px;
+            height: 100px;
+            padding: 50px;
+            border: 10px solid red;
+            background-color: pink;
+        }
+
+        body div:last-child {
+            /* css3盒子模型=with*/
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            padding: 50px;
+            border: 10px solid red;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+</body>
+
+</html>

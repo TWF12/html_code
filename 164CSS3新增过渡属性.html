@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            /* 1.要过度的属性(可以all) 2.持续时间(必须写单位,如s和ms) 3.运动曲线(默认为ease逐渐慢下来,ease-in逐渐加速,ease-out逐渐减速)
+               4.延迟时间
+               多个属性用逗号隔开,所有属性用all
+            */
+            /* transition: width 1s ease-in 10ms, height 1s ease-in 1s; */
+            transition: all 1s ease-in 10ms;
+        }
+        div:hover{
+            width: 1000px;
+            height: 800px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

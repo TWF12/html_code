@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            width: 80%;
+            height: 600px;
+            background-color: pink;
+            justify-content: center;
+            /* flex-wrap: wrap; */
+            /* 只适用于单行(单列) */
+            /* 默认为拉升到与容器一样宽或高(y为侧轴则是高.x为侧轴则是宽),需要子元素不设置宽或高 */
+            align-items: stretch;
+            /* 从头部对齐,如果是x(y)轴为侧轴,那么就是左(上)对齐 */
+            align-items: flex-start;
+            /* 为从尾部对齐,如果是x(y)轴为侧轴,那么就是右(下)对齐 */
+            align-items: end;
+            /* 居中对齐 */
+            align-items: center;
+
+        }
+
+        div span {
+            width: 300px;
+            height: 200px;
+            margin-right: 10px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+    </div>
+</body>
+
+</html>

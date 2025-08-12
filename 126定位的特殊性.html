@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 行内元素添加绝对或固定定位,脱离标准流,与浮动类似,可以设置大小 */
+        span {
+            position: absolute;
+            top: 100px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        /*块级元素添加绝对或固定定位,脱离标准流,与浮动类似,如果不设置大小,默认大小就是内容大小 */
+        div {
+            position: fixed;
+            background-color: green;
+        }
+        /* 脱离标准流的盒子不会发生外边距塌陷 */
+    </style>
+</head>
+<body>
+    <span></span>
+    <div>123</div>
+</body>
+</html>

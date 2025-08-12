@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .damao,.ermao {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        border: 1px, solid;
+    }
+    /* 相邻块级元素外边距的合并不是简单相加,而是取较大值 */
+    .damao {
+        margin-bottom: 20px;
+    }
+    .ermao {
+        margin-top: 30px;
+    }
+    </style>
+</head>
+<body>
+    <div class="damao">大毛</div>
+    <div class="ermao">二毛</div>
+</body>
+</html>

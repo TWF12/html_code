@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            width: 0;
+            height: 0;
+            border-width: 100px 50px 0 0;
+            border-style: solid;
+            border-color: transparent red transparent;
+        }
+        .price {
+            margin: 0 auto;
+            width: 160px;
+            height: 24px;
+            border: 1px solid red;
+            line-height: 24px;
+        }
+        .miaosha {
+            position: relative;
+            float: left;
+            margin-right: 8px;
+            width: 90px;
+            height: 100%;
+            background-color: red;
+            text-align: center;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        .miaosha i {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-width: 24px 10px 0 0 ;
+            border-style: solid;
+            border-color: transparent #ffffff transparent transparent;
+        }
+        .origin {
+            color: gray;
+            font-size: 12px;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="price">
+        <span class="miaosha">
+            1000$
+            <i></i>
+        </span>
+        <span class="origin">5000$</span>
+    </div>
+</body>
+</html>

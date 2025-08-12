@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* 3D效果需配合perspectiv透视实现 */
+            /* 透视写在被观察元素的父级盒子上 */
+            /* 透视越小盒子越大 */
+            perspective: 200px;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* 一般translateX()里的单位是px */
+            /* x,y,z不能省略,没有则写0 */
+            /* z的距离越大盒子越大 */
+            transform: translate3d(300px,100px,100px);
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

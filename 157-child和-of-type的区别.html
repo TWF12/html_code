@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li:first-of-type {
+            background-color: pink;
+        }
+        ul li:last-of-type {
+            background-color: pink;
+        }
+        ul li:nth-of-type(even) {
+            color: red;
+        }
+        ul li:nth-of-type(odd) {
+            color: purple;
+        }
+        /* 选择规则:先根据:nth-child(n)中的n选取第n个孩子,然后再判断是不是div标签,是的话选取,不是则不选 */
+        section div:nth-child(1) {
+            color: red;
+        }
+        /* 选取规则:先选取div的盒子,再在选取的盒子中根据:nth-of-type(n)中的n选取第几个孩子 */
+        section div:nth-of-type(1) {
+            color: red;
+        }
+
+        /* 总结:-child与-of-type的区别是,前者先孩子后类型,后者先类型后孩子 */
+    </style>
+</head>
+<body>
+    <ul>
+        <p>我是另类的</p>
+        <li>我是第1个孩子</li>
+        <li>我是第2个孩子</li>
+        <li>我是第3个孩子</li>
+        <li>我是第4个孩子</li>
+        <li>我是第5个孩子</li>
+        <li>我是第6个孩子</li>
+        <li>我是第7个孩子</li>
+        <li>我是第8个孩子</li>
+    </ul>
+
+    <section>
+        <p>光头强</p>
+        <div>熊大</div>
+        <div>熊二</div>
+    </section>
+</body>
+</html>

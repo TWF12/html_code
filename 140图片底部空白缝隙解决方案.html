@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid red;
+        }
+
+        div img {
+            /* 方法一:给图片添加vertical-align: bottom|middle|top(推荐) */
+            vertical-align: bottom;
+            /* 方法二:将行内块元素转换成块级元素,因为只有行内元素或行内块元素才有vertical-align对齐方式(会影响其他布局) */
+            /* display: block; */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="imags/ldh.jpg" alt="">
+    </div>
+</body>
+
+</html>

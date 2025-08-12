@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>可运行版随机点名系统</title>
+    <style>
+        :root {
+            --primary-color: #2196F3;
+            --secondary-color: #FF9800;
+            --success-color: #4CAF50;
+            --danger-color: #f44336;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #container {
+            text-align: center;
+            margin: 20px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 90%;
+        }
+
+        #nameDisplay {
+            font-size: 4em;
+            margin: 30px;
+            padding: 30px;
+            color: var(--primary-color);
+            border: 3px solid var(--primary-color);
+            border-radius: 16px;
+            min-height: 180px;
+            transition: transform 0.3s ease;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 25px 0;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-danger {
+            background: var(--danger-color);
+            color: white;
+        }
+
+        #importSection {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f8f8;
+            border-radius: 8px;
+        }
+
+        textarea {
+            width: 80%;
+            height: 100px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .status {
+            margin: 15px 0;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1 style="color: var(--primary-color);">随机点名系统</h1>
+
+        <div id="importSection">
+            <textarea id="textInput" placeholder="输入姓名，支持逗号、分号或换行分隔"></textarea>
+            <div class="button-group">
+                <button class="btn-primary" onclick="importFromText()">导入文本</button>
+                <input type="file" id="fileInput" hidden accept=".txt">
+                <button class="btn-primary" onclick="document.getElementById('fileInput').click()">导入文件</button>
+            </div>
+            <div id="importStatus" class="status">等待数据导入...</div>
+        </div>
+
+        <div id="nameDisplay">就绪</div>
+
+        <div class="button-group">
+            <button id="startBtn" class="btn-primary" onclick="startRolling()">开始</button>
+            <button id="stopBtn" class="btn-danger" onclick="stopRolling()" disabled>停止</button>
+            <button class="btn-danger" onclick="clearData()">重置</button>
+        </div>
+
+        <div class="status">
+            <div>当前名单：<span id="studentCount">0</span>人</div>
+            <div>已点名：<span id="usedCount">0</span>人</div>
+            <label>
+                <input type="checkbox" id="allowRepeat"> 允许重复
+            </label>
+        </div>
+
+        <div id="history">
+            <h3>历史记录</h3>
+            <div id="historyList"></div>
+        </div>
+    </div>
+
+    <script>
+        // 初始化数据
+        let students = [];
+        let usedNames = [];
+        let isRolling = false;
+        let timer = null;
+
+        // 文件导入
+        document.getElementById('fileInput').addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                processData(e.target.result);
+                showMessage(`已导入文件：${file.name}`, 'success');
+            };
+            reader.readAsText(file);
+        });
+
+        // 文本导入
+        function importFromText() {
+            const text = document.getElementById('textInput').value;
+            if (!text) {
+                showMessage('请输入有效内容', 'error');
+                return;
+            }
+            processData(text);
+        }
+
+        // 数据处理
+        function processData(data) {
+            students = data.split(/[\n,，;；\s]+/)
+                .map(name => name.trim())
+                .filter(name => {
+                    if (name.length < 2) {
+                        showMessage(`忽略无效姓名：${name}`, 'warning');
+                        return false;
+                    }
+                    return true;
+                })
+                .filter((name, index, arr) => arr.indexOf(name) === index); // 去重
+
+            if (students.length > 0) {
+                usedNames = [];
+                updateUI();
+                showMessage(`成功导入 ${students.length} 个有效姓名`, 'success');
+            } else {
+                showMessage('未找到有效数据', 'error');
+            }
+        }
+
+        // 核心逻辑
+        function startRolling() {
+            if (students.length === 0) {
+                showMessage('请先导入数据', 'error');
+                return;
+            }
+
+            if (!document.getElementById('allowRepeat').checked && usedNames.length >= students.length) {
+                showMessage('所有人已被点名', 'warning');
+                return;
+            }
+
+            isRolling = true;
+            document.getElementById('startBtn').disabled = true;
+            document.getElementById('stopBtn').disabled = false;
+
+            timer = setInterval(() => {
+                let pool = document.getElementById('allowRepeat').checked
+                    ? students
+                    : students.filter(name => !usedNames.includes(name));
+
+                if (pool.length === 0) {
+                    stopRolling();
+                    return;
+                }
+
+                const randomIndex = Math.floor(Math.random() * pool.length);
+                document.getElementById('nameDisplay').textContent = pool[randomIndex];
+            }, 50);
+        }
+
+        function stopRolling() {
+            clearInterval(timer);
+            isRolling = false;
+            document.getElementById('startBtn').disabled = false;
+            document.getElementById('stopBtn').disabled = true;
+
+            const selected = document.getElementById('nameDisplay').textContent;
+            if (selected && !usedNames.includes(selected)) {
+                usedNames.push(selected);
+                addToHistory(selected);
+                updateUI();
+            }
+        }
+
+        // 辅助功能
+        function addToHistory(name) {
+            const historyList = document.getElementById('historyList');
+            const item = document.createElement('div');
+            item.textContent = `${new Date().toLocaleTimeString()} - ${name}`;
+            historyList.prepend(item);
+        }
+
+        function clearData() {
+            if (!confirm('确定要清除所有数据吗？')) return;
+            students = [];
+            usedNames = [];
+            document.getElementById('textInput').value = '';
+            document.getElementById('historyList').innerHTML = '';
+            updateUI();
+            showMessage('已重置系统', 'success');
+        }
+
+        function updateUI() {
+            document.getElementById('studentCount').textContent = students.length;
+            document.getElementById('usedCount').textContent = usedNames.length;
+            document.getElementById('startBtn').disabled = students.length === 0;
+        }
+
+        function showMessage(msg, type) {
+            const status = document.getElementById('importStatus');
+            status.style.color = {
+                success: '#4CAF50',
+                error: '#f44336',
+                warning: '#FF9800'
+            }[type];
+            status.textContent = msg;
+        }
+    </script>
+</body>
+
+</html>
