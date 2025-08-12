@@ -6,27 +6,22 @@ body {
   font-family: Microsoft YaHei, Microsoft YaHei-Regular;
   background-color: #F2F4F7;
 }
-
 @media screen and (min-width: 750px) {
   html {
     font-size: 37.5px !important;
   }
 }
-
 a {
   text-decoration: none;
   color: #707070;
 }
-
 img {
   vertical-align: middle;
 }
-
 .wrap {
   background: #ffffff;
   padding-bottom: 1.1467rem;
 }
-
 .header {
   height: 2.2667rem;
   border-bottom: 1px solid #EAEAEA;
@@ -36,13 +31,11 @@ img {
   line-height: 2.2667rem;
   color: #1c1c1c;
 }
-
 .nav {
   display: flex;
   flex-wrap: wrap;
   margin-top: 1.2rem;
 }
-
 .nav .items {
   width: 33.33%;
   margin-bottom: 1.6rem;
@@ -50,25 +43,20 @@ img {
   flex-direction: column;
   align-items: center;
 }
-
 .nav .items img {
   width: 3.7067rem;
 }
-
 .nav .items span {
   font-size: 0.6667rem;
 }
-
 .go {
   margin: 0 0.2667rem 0 0.48rem;
 }
-
 .content {
   padding: 1.0667rem 0.5867rem;
   margin-top: 0.2667rem;
   background: #ffffff;
 }
-
 .content .con-hd {
   display: flex;
   height: 1.0133rem;
@@ -76,13 +64,11 @@ img {
   align-items: center;
   margin-bottom: 1.04rem;
 }
-
 .content .con-hd h4 {
   font-size: 0.6933rem;
   color: #333333;
   margin: 0;
 }
-
 .content .con-hd h4::before {
   content: '';
   display: inline-block;
@@ -94,21 +80,17 @@ img {
   background-size: 100%;
   vertical-align: middle;
 }
-
 .content .con-hd .more {
   font-size: 0.5867rem;
   color: #999999;
 }
-
 .content .get_job_focus {
   position: relative;
 }
-
 .content .get_job_focus .swiper-container {
   width: 14.4rem;
   height: 100%;
 }
-
 .content .get_job_focus .swiper-slide {
   text-align: center;
   background: #fff;
@@ -130,46 +112,38 @@ img {
   transform: scale(0.8);
   opacity: 0.4;
 }
-
 .content .get_job_focus .swiper-slide a {
   width: 9.0133rem;
   height: 10.0267rem;
 }
-
 .content .get_job_focus .swiper-slide a img {
   width: 100%;
   height: 100%;
 }
-
 .content .get_job_focus .swiper-slide p {
   width: 6.8rem;
   margin-top: 0.64rem;
   font-size: 0.6667rem;
   color: #333333;
 }
-
 .content .get_job_focus .swiper-slide-active,
 .content .get_job_focus .swiper-slide-duplicate-active {
   transform: scale(1);
   z-index: 9999;
   opacity: 1;
 }
-
 .study-content {
   margin-bottom: 2.9333rem;
 }
-
 .study-content .con-hd h4::before {
   background: url(../icons/i1.png) no-repeat center center;
 }
-
 .study-content .study .swiper {
   overflow: hidden;
   width: 100%;
   height: 100%;
   padding: 0.2667rem;
 }
-
 .study-content .study .swiper-slide {
   height: 9.0667rem;
   border-radius: 0.2667rem;
@@ -179,26 +153,22 @@ img {
   display: flex;
   flex-direction: column;
 }
-
 .study-content .study .swiper-slide h5 {
   font-size: 0.6933rem;
   margin: 0.2667rem;
   font-weight: 400;
 }
-
 .study-content .study .swiper-slide p {
   font-size: 0.6933rem;
   color: #ff4400;
   margin: 0 0.4rem 0.5333rem;
 }
-
 .study-content .study .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
 .footer {
   position: fixed;
   display: flex;
@@ -213,7 +183,6 @@ img {
   border-top: 1px solid #E2E2E2;
   background-color: #fff;
 }
-
 .footer .item {
   flex: 1;
   display: flex;
@@ -221,18 +190,15 @@ img {
   align-items: center;
   padding: 0.5333rem 1.2rem;
 }
-
 .footer .item img {
   width: 1.04rem;
   height: 1.0933rem;
 }
-
 .footer .item p {
   margin-top: 0.2933rem;
   font-size: 0.5867rem;
   color: #666666;
 }
-
 .footer .item:first-child p {
   color: #52C4F0;
 }
