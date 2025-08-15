@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-3.4.1-dist/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+    <style>
+        .row div {
+            height: 50px;
+            background-color: pink;
+        }
+        .row div:nth-child(3) {
+            background-color: lightblue; /* 特定列的背景色 */
+        }
+        .row span {
+            font-size: 20px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3">
+                <span class="visible-lg">我只会在大屏幕下显示</span>
+            </div>
+            <div class="col-xs-3">2</div>
+            <!-- 中等和超小屏幕下隐藏 -->
+            <div class="col-xs-3 hidden-md hidden-xs">我会变魔术</div>
+            <div class="col-xs-3">4</div>
+        </div>
+    </div>
+</body>
+</html>
